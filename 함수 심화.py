@@ -30,3 +30,18 @@ def test2():
 
 test2()
 
+# 클래스 데코레이터
+class decoratorExample:
+    def __init__(self, func):
+        self.func = func
+
+    def __call__(self, *args, **kargs):
+        print("Start", self.func.__name__)
+        self.func(*args, **kargs)
+        print("End", self.func.__name__)
+
+@decoratorExample
+def test(a, b, c):
+    print("Variables :", a,b,c)
+
+test("1", 2, c="345")
