@@ -1,0 +1,14 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+
+def crawling(url):
+    #selenium 크롤링 셋팅
+    driver = webdriver.Chrome()
+    driver.get(url) 
+
+    options = webdriver.ChromeOptions()
+    options.add_experimental_option('excludeSwitches', ['enable-logging'])
+    
+
+crawling('https://dalya-tech.tistory.com/16')
+crawling('https://dalya-tech.tistory.com/')
