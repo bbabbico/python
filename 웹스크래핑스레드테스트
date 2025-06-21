@@ -20,7 +20,7 @@ def thread_1(url):
 if __name__ == "__main__":
     
     url = ['https://dalya-tech.tistory.com/16','https://dalya-tech.tistory.com/']
-    threads = map(list(thread_1,url))
+    threads = list(map(thread_1,url))
 
     for t in threads:
         t.join() # 쓰레드가 모든 작업을 마칠 때까지 기다리는 것
