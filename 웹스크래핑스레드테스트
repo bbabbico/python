@@ -12,22 +12,22 @@ def crawling(url):
 
 def thread_1():
     crawling('https://dalya-tech.tistory.com/16')
-    t1 = threading.Thread(target=thread_1)
-    t1.start()
-    return t1
+
 
 
 def thread_2():
     crawling('https://dalya-tech.tistory.com/')
-    t2 = threading.Thread(target=thread_2)
-    t2.start()
-    return t2
+    
 
 
 if __name__ == "__main__":
+    t1 = threading.Thread(target=thread_1)
+    t1.start()
 
-    threads = [thread_1(),thread_2()]
+    t2 = threading.Thread(target=thread_2)
+    t2.start()
+    
+    threads = [t1,t2]
 
     for t in threads:
         t.join() # 쓰레드가 모든 작업을 마칠 때까지 기다리는 것
-    
